@@ -1,0 +1,29 @@
+<button (click)="showAdd()"> Add user</button>
+
+<div *ngIf="enable">
+    <input type="text" placeholder="title" [(ngModel)]="title">
+    <input type="text" placeholder="body" [(ngModel)]="body">
+    <button (click)="add()" *ngIf="addNewUser">add</button>
+    <button (click)="update()" *ngIf="enableEditmode">update</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">userId</th>
+            <th style="width: 30%">title</th>
+            <th style="width: 30%">body</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users; let i = index">
+            <td>{{user.id}}</td>
+            <td>{{user.title}} </td>
+            <td>{{user.body}}</td>
+            <td><button (click)="showEdit(user)">edit</button><button (click)="deleteUser(user, i)">delete</button></td>
+
+        </tr>
+
+    </tbody>
+</table>
