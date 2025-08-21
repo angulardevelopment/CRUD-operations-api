@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { OperationsComponent } from './operations/operations.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TypedComponent } from './typed/typed.component';
+import { IndianFlagComponent } from './indian-flag/indian-flag.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OperationsComponent
+    OperationsComponent,
+    TypedComponent,
+    IndianFlagComponent
   ],
   imports: [
     BrowserModule,

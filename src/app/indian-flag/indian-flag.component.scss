@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  background: #0e0f14;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.flag {
+  aspect-ratio: 3 / 2;
+  width: min(90vw, 960px);
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      to bottom,
+      #ff9933 0    33.333%,
+      #ffffff 33.333% 66.666%,
+      #138808 66.666% 100%
+    );
+}
+
+#chakra {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+/* Optional sheen */
+.flag::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(200px 40px at -10% 20%, rgba(255,255,255,0.16), transparent 50%),
+    radial-gradient(220px 42px at 110% 60%, rgba(0,0,0,0.12), transparent 60%);
+  mix-blend-mode: overlay;
+  animation: breeze 3s ease-in-out infinite;
+}
+@keyframes breeze {
+  0%,100% { transform: translateX(0); filter: blur(0.2px); }
+  50%     { transform: translateX(10px); filter: blur(0.6px); }
+}
